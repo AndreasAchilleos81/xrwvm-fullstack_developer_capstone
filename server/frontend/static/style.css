@@ -124,3 +124,41 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+
+.blue-letters-bold{
+    font-size:x-large;
+    color: #6495EC;
+    font-weight:bolder;
+    align-content:center;
+    text-align: center;
+}
+
+.blue-letters {
+    font-size: larger;
+    color: #6495EC;
+    align-content:center;
+    text-align: center;
+}
+
+  .my-right-div {
+    /* Remove any default outline */
+    outline: none;
+    margin: 0;
+    padding: -1;
+  
+    /* Apply box-shadow to simulate outlines */
+    box-shadow: 
+    2px 0px 0 0 black;
+  }
+
+  .my-left-div {
+    /* Remove any default outline */
+    outline: none;
+    margin: 0;
+    padding: -1;
+  
+    /* Apply box-shadow to simulate outlines */
+    box-shadow: 
+    -2px 0 0 0 black; /* Left border */
+  }
