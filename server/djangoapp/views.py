@@ -12,7 +12,7 @@ import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
 
-from djangoapp.restapis import analyze_review_sentiments, get_request
+from djangoapp.restapis import analyze_review_sentiments, get_request, post_review
 from .populate import initiate
 from djangoapp.models import CarMake, CarModel
 
@@ -123,5 +123,14 @@ def get_dealer_details(request, dealer_id):
     
 
 # Create a `add_review` view to submit a review
-# def add_review(request):
-# ...
+def add_review(request):
+    if(request.user.is_anonymous == False):
+        data = json.loads(request.body)
+        try:
+            response = post_review(data)
+            print(response)
+            return JsonResponse({"status":200})
+        except:
+            return JsonResponse({"status":401,"message":"Error in posting review"})
+    else:
+        return JsonResponse({"status":403,"message":"Unauthorized"})
